@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/recipe_menu" android:title="레시피">
+    <menu>
+      <item android:id="@+id/recipe_list" android:title="레시피목록"/>
+      <item android:id="@+id/chef_list" android:title="쉐프목록"/>
+    </menu>
+  </item>
+  <item android:id="@+id/food_menu" android:title="맛집">
+    <menu>
+      <item android:id="@+id/food_list" android:title="맛집목록"/>
+      <item android:id="@+id/food_find" android:title="맛집검색"/>
+    </menu>
+  </item>
+  <item android:id="@+id/seoul_menu" android:title="서울여행">
+    <menu>
+      <item android:id="@+id/seoul_location" android:title="명소"/>
+      <item android:id="@+id/seoul_nature" android:title="자연/관광"/>
+      <item android:id="@+id/seoul_hotel" android:title="호텔"/>
+    </menu>
+  </item>
+  <item android:id="@+id/news" android:title="뉴스"/>
+  <item android:id="@+id/chatbot" android:title="추천챗봇"/>
+</menu>
