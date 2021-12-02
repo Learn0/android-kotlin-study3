@@ -84,13 +84,16 @@ class MainActivity : AppCompatActivity() {
         when(item?.itemId)
         {
             R.id.recipe_list -> {
-                Toast.makeText(this,"recipe-list",Toast.LENGTH_SHORT).show()
+                var intent=Intent(this,RecipeActivity::class.java)
+                startActivity(intent)
             }
             R.id.chef_list -> {
                 Toast.makeText(this,"chef-list",Toast.LENGTH_SHORT).show()
             }
+            // web : <a> , app: Intent ==> 화면 변경
             R.id.food_list -> {
-                Toast.makeText(this,"food-list",Toast.LENGTH_SHORT).show()
+                var intent=Intent(this,MainActivity::class.java)
+                startActivity(intent)
             }
             R.id.news -> {
                 var intent=Intent(this,NewsActivity::class.java)
@@ -98,6 +101,16 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.chatbot -> {
                 Toast.makeText(this,"chatbot",Toast.LENGTH_SHORT).show()
+            }
+            R.id.food_find -> {
+                var intent=Intent(this,FoodFindActivity::class.java)
+                // intent에 데이터를 전송할 수 있다
+                //intent.putExtra("id","admin")  ?id=admin
+                startActivity(intent)
+            }
+            R.id.seoul_location -> {
+                var intent=Intent(this,SeoulLocationActivity::class.java)
+                startActivity(intent)
             }
         }
         return false
@@ -136,6 +149,13 @@ class FoodAdapter(context:Context, cateList:List<CategoryVO>):BaseAdapter()
         Glide.with(rowMain.context).load("${cateList.get(position).poster}").into(imgView)
         food_title.text=cateList.get(position).title
         food_subject.text=cateList.get(position).subject
+
+        rowMain.setOnClickListener{
+            var intent=Intent(rowMain.context,FoodActivity::class.java)
+            intent.putExtra("cno",cateList.get(position).cno.toString())
+            rowMain.context.startActivity(intent)
+            // <a href="">
+        }
         return rowMain
     }
 

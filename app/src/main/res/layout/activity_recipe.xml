@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeActivity">
+
+    <GridView
+        android:id="@+id/recipe_gridView"
+        android:layout_width="406dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_page" />
+
+    <Button
+        android:id="@+id/recipe_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="6dp"
+        android:text="이전"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_gridView"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_page"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/recipe_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="6dp"
+        android:text="다음"
+        app:backgroundTint="#FF9800"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_gridView"
+        app:layout_constraintEnd_toEndOf="@+id/recipe_gridView" />
+
+    <TextView
+        android:id="@+id/recipe_page"
+        android:layout_width="188dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="0 page / 0 pages"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_gridView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recipe_prev"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

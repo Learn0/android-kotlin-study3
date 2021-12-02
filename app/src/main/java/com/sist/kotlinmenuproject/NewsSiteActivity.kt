@@ -4,27 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_news_site.*
-import org.jetbrains.anko.webView
 
+// okHttp => Task (X)  ==> thread
+// 갤러리 , GPS (지도)  => 비동기 쓰레드 프로그램
 class NewsSiteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_site)
-        var site = intent.getStringExtra("site") //request.getParameter("site")
-        // 웹뷰 설정 => JavaScript를 사용할 수 있게 설정
-        webView.apply{
+
+        // site를 받는다
+        var site=intent.getStringExtra("site")
+        webView.apply {
             settings.javaScriptEnabled=true
             webViewClient= WebViewClient()
+            webView.loadUrl(site.toString())
         }
-        // 형 변환  ==> ?(null을 포함)
-        webView.loadUrl(site.toString())
     }
 }
-
-
-
-
-
-
-
-
